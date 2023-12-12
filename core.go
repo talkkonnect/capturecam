@@ -10,7 +10,7 @@ import (
 	"github.com/icholy/digest"
 )
 
-func captureCam() {
+func start(config) {
 
 	cameraName := "cam1"
 	urlBase := "http://172.18.3.101"
