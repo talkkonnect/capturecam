@@ -3,18 +3,17 @@ package main
 import (
 	"flag"
 	"fmt"
+
 	"github.com/talkkonnect/capturecam"
 )
 
 func main() {
-
 	config := flag.String("config", "/home/talkkonnect/gocode/src/github.com/talkkonnect/capturecam/capturecam.xml", "full path to capturecam.xml configuration file")
 
 	flag.Usage = capturecamusage
 	flag.Parse()
 
-	capturecam.Start(config)
-
+	capturecam.Init(*config)
 }
 
 func capturecamusage() {

@@ -3,6 +3,7 @@ package capturecam
 import (
 	"fmt"
 	"io"
+	"log"
 	"net/http"
 	"os"
 	"time"
@@ -10,12 +11,13 @@ import (
 	"github.com/icholy/digest"
 )
 
-func start(config) {
+func Init(configFile string) {
 
+	log.Printf("info: %s\n", configFile)
 	cameraName := "cam1"
 	urlBase := "http://172.18.3.101"
 	urlSuffix := "/ISAPI/Streaming/Channels/101/picture"
-	url :=  urlBase+urlSuffix
+	url := urlBase + urlSuffix
 	username := "admin"
 	password := "passw0rd"
 	timestamp := time.Now().Format("20060102150405")
