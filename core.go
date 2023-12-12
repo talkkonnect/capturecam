@@ -1,4 +1,4 @@
-package main
+package capturecam
 
 import (
 	"fmt"
@@ -10,16 +10,12 @@ import (
 	"github.com/icholy/digest"
 )
 
-func main() {
-
-	captureCam()
-
-}
-
 func captureCam() {
 
 	cameraName := "cam1"
-	url := "http://172.18.3.101/ISAPI/Streaming/Channels/101/picture"
+	urlBase := "http://172.18.3.101"
+	urlSuffix := "/ISAPI/Streaming/Channels/101/picture"
+	url :=  urlBase+urlSuffix
 	username := "admin"
 	password := "passw0rd"
 	timestamp := time.Now().Format("20060102150405")
